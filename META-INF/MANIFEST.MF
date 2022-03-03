@@ -1,0 +1,2 @@
+Manifest-Version: 1.0
+Main-Class: cf.vbnm.filechooser4j.Test
