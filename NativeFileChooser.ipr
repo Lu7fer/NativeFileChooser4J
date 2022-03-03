@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactManager">
+    <artifact type="jar" name="NativeFileChooser4J">
+      <output-path>$PROJECT_DIR$/out/artifacts/NativeFileChooser4J</output-path>
+      <root id="archive" name="NativeFileChooser4J.jar">
+        <element id="module-output" name="NativeFileChooser4J" />
+        <element id="file-copy" path="$PROJECT_DIR$/jni/libfilechooser.dll" />
+      </root>
+    </artifact>
+  </component>
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/hs_err_pid23736.log" charset="GBK" />
+  </component>
+  <component name="InspectionProjectProfileManager">
+    <profile version="1.0">
+      <option name="myName" value="Project Default" />
+    </profile>
+    <version value="1.0" />
+  </component>
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/NativeFileChooser4J.iml" filepath="$PROJECT_DIR$/NativeFileChooser4J.iml" />
+    </modules>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" default="true" project-jdk-name="15" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+  </component>
+</project>
