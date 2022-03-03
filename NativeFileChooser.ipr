@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ArtifactManager">
-    <artifact type="jar" name="NativeFileChooser4J">
+    <artifact type="jar" build-on-make="true" name="NativeFileChooser4J">
       <output-path>$PROJECT_DIR$/out/artifacts/NativeFileChooser4J</output-path>
       <root id="archive" name="NativeFileChooser4J.jar">
         <element id="module-output" name="NativeFileChooser4J" />
-        <element id="file-copy" path="$PROJECT_DIR$/jni/libfilechooser.dll" />
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+        </element>
+        <element id="directory" name="cf">
+          <element id="directory" name="vbnm">
+            <element id="directory" name="filechooser4j" />
+          </element>
+        </element>
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/NativeFileChooser4J/libfilechooser.dll" />
       </root>
     </artifact>
   </component>

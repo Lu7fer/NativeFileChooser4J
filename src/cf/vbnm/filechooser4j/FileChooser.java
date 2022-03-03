@@ -1,14 +1,61 @@
 package cf.vbnm.filechooser4j;
 
-import java.io.File;
+import java.io.*;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Objects;
 
 public class FileChooser {
     static {
-        System.load(Objects.requireNonNull(FileChooser.class.getResource("/")).getPath() + "libfilechooser.dll");
+        String libFullName = "libfilechooser.dll";
+
+        String nativeTempDir = System.getProperty("java.io.tmpdir");
+
+        InputStream in = null;
+        BufferedInputStream reader;
+        FileOutputStream writer = null;
+
+        File extractedLibFile = new File(nativeTempDir + File.separator + libFullName);
+        if (extractedLibFile.exists()) {
+            extractedLibFile.delete();
+        }
+        try {
+            in = FileChooser.class.getResourceAsStream(libFullName);
+            if (in == null)
+                in = FileChooser.class.getResourceAsStream(libFullName);
+            FileChooser.class.getResource(libFullName);
+            assert in != null;
+            reader = new BufferedInputStream(in);
+            writer = new FileOutputStream(extractedLibFile);
+
+            byte[] buffer = new byte[1024];
+
+            while (reader.read(buffer) > 0) {
+                writer.write(buffer);
+                buffer = new byte[1024];
+            }
+            writer.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (in != null) {
+                try {
+                    in.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (writer != null) {
+                try {
+                    writer.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        System.load(extractedLibFile.toString());
+        //System.load(Objects.requireNonNull(FileChooser.class.getResource("")).getPath() + "libfilechooser.dll");
     }
 
 
